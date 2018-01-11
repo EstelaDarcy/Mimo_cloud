@@ -1,0 +1,12 @@
+Receta:
+	- Nombre
+	- Dificultad
+	- Ingredientes []<Ingrediente>
+	- Pasos []<String>
+	- Categoría (percados, carnes, entrantes...)
+	- Tiempo de preparación
+	- kcal
+
+Ingrediente:
+	- Nombre_i
+	- Cantidad
