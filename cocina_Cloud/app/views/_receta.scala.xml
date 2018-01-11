@@ -1,0 +1,5 @@
+@(receta: Receta)
+	<receta>
+		<nombre>@receta.getNombre()</nombre>
+		<dificultad>@receta.getDificultad()</dificultad>
+	</receta>
