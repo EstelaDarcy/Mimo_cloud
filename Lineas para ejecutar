@@ -1,0 +1,8 @@
+SELECT:
+
+ 		 curl -X GET http://localhost:9000/receta/tortilla --verbose
+
+
+INSERT:
+
+		curl -X POST http://localhost:9000/receta --verbose
