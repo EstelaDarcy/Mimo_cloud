@@ -35,7 +35,7 @@ public class CocinaController extends Controller
 	
 	
 	
-	public Result addRecetaSucio ()
+	public Result addReceta ()
 	{
 		//ingredientes1.add(i1);
 		//ingredientes1.add(i2);
