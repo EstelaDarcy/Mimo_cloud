@@ -5,8 +5,10 @@
 #
 # receta
 #
-POST  	/receta				controllers.CocinaController.addReceta()
-GET	/receta/:nombre				controllers.CocinaController.retrieveReceta(nombre)
+POST  	/receta							controllers.CocinaController.addReceta()
+GET		/receta/:nombre					controllers.CocinaController.retrieveReceta(nombre)
+GET 		/recetas							controllers.CocinaController.retrieveRecetas()
+GET 		/recetas/:dificultad				controllers.CocinaController.retrieveRecetasPorDificultad(dificultad: Integer)
 
 POST		/recetas						controllers.CocinaController.createReceta()
 
