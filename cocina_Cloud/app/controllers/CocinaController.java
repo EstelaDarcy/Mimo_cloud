@@ -8,19 +8,25 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.inject.Inject;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
+import play.data.Form;
+import play.data.FormFactory;
 import play.mvc.Controller;
 
 //import modelo.Ingrediente;
 //import modelo.Receta;
 
 public class CocinaController extends Controller 
-{
+{	
+	@Inject
+	FormFactory formFactory;
 	
 	ArrayList<Receta> recetas = new ArrayList();  
 	
@@ -66,7 +72,25 @@ public class CocinaController extends Controller
 	    		return Results.created();  //codigo 201 -> exito, se ha creado	    		
 	    
 	}
+	public Result createReceta() {
+		Form<Receta> fRec = formFactory.form(Receta.class).bindFromRequest();
+		
+		if(fRec.hasErrors()) {
+			return Results.status(409, fRec.errorsAsJson());
+		}
+		
+		Receta receta = fRec.get(); //si no tiene errores extraigo el objeto del form
+		
+		//List<Ingrediente> ingredientes = receta.getIngredientes(); 
+		
+		if(recetas.contains(receta)) {
+			return ok("receta existe");
+		}
 	
+		recetas.add(receta);
+		
+		return Results.created("ta creao");
+	}
 	
 	
 	public Result retrieveReceta(String nombre) {
@@ -85,4 +109,6 @@ public class CocinaController extends Controller
 		return ok("No hace inserccion");
 		//return Results.notFound();
 	}
+	
+	
 }

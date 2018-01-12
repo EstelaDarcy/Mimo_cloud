@@ -8,6 +8,8 @@
 POST  	/receta				controllers.CocinaController.addReceta()
 GET	/receta/:nombre				controllers.CocinaController.retrieveReceta(nombre)
 
+POST		/recetas						controllers.CocinaController.createReceta()
+
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
 # An example controller showing how to use dependency injection

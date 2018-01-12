@@ -15,6 +15,8 @@ public class Receta
 	private String tiempo;
 	private Integer kcal;
 	
+	//public static final Finder<String,Receta> find = new Finder<>(User.class);
+	
 	public Receta() {
 		super();
 	}
@@ -99,4 +101,11 @@ public class Receta
 	public void addIngrediente(Receta receta, Ingrediente ingrediente) {
 		receta.getIngredientes().add(ingrediente);
 	}
+	
+	/*public static Receta findByName(String nombre) {
+		if(nombre==null) {
+			throw new IllegalArgumentException();
+		}
+	return null;
+	}*/
 }

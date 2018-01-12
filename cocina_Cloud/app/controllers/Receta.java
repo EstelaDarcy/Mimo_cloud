@@ -14,9 +14,13 @@ public class Receta {
 	private String tiempo;
 	private Integer kcal;
 	
+	
+	
 	public Receta() {
 		super();
 	}
+	
+	//public static final Finder<String,Receta> find = new Finder<>(Receta.class);
 	
 	public Receta(Integer id_receta, String nombre, Integer dificultad, ArrayList<Ingrediente> ingredientes,
 			Map<Integer, String> pasos, String categoria, String tiempo, Integer kcal) {
@@ -97,5 +101,11 @@ public class Receta {
 	
 	public void addIngrediente(Receta receta, Ingrediente ingrediente) {
 		receta.getIngredientes().add(ingrediente);
+	}
+	
+	public void addReceta(Receta receta){
+		this.setNombre(receta.getNombre());
+		this.setDificultad(receta.getDificultad());
+		this.setCategoria(receta.getCategoria());
 	}
 }
