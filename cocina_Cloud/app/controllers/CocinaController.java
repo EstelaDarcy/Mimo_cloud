@@ -16,12 +16,11 @@ import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-<<<<<<< HEAD
 import play.data.Form;
 import play.data.FormFactory;
-=======
+
 import play.libs.Json;
->>>>>>> 5c73299d17c35b1bca03c67fd4d5996d528f48b2
+
 import play.mvc.Controller;
 
 //import modelo.Ingrediente;
@@ -136,9 +135,7 @@ public class CocinaController extends Controller
 		//return Results.notFound();
 	}
 	
-<<<<<<< HEAD
-	
-=======
+
 	public Result retrieveRecetas() {
 		if(request().accepts("application/xml")) {
 			return ok(views.xml.recetas.render(this.recetas));
@@ -175,7 +172,7 @@ public class CocinaController extends Controller
 				return status(415);
 			}
 		}
-	}
+	}//a
 	
 	public Result retrieveRecetasPorCategoria(String categoria) {
 		return ok();
@@ -184,5 +181,4 @@ public class CocinaController extends Controller
 	public Result retrieveRecetasPorIngrediente(String ingrediente) {
 		return ok();
 	}
->>>>>>> 5c73299d17c35b1bca03c67fd4d5996d528f48b2
 }
